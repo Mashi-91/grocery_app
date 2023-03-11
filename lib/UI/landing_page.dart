@@ -6,7 +6,14 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text("hey there i am here to help you"),),
+      body: Center(
+        child: Text(
+            "hey there i am here to help you",
+          style: TextStyle(
+            color: Colors.lightBlue,
+          ),
+        ),
+      ),
     );
   }
 }
