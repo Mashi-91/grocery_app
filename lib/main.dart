@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/UI/home_page.dart';
 import 'package:grocery_app/UI/landing_page.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         primarySwatch: Colors.blue,
       ),
-      home: const Welcome(),
+      home: const HomePage(),
     );
   }
 
