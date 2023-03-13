@@ -2,7 +2,8 @@ class imageModel{
   String id;
   String img;
   String? title;
-  imageModel(this.id, this.img, {this.title});
+  double? price;
+  imageModel(this.id, this.img, {this.title, this.price});
 }
 
 final List<imageModel> imageinfo = [
@@ -31,4 +32,13 @@ final List<imageModel> CircularImages = [
   imageModel(DateTime.now().toString(), 'assets/images/DrinksImg.jpg', title: "Drinks"),
   imageModel(DateTime.now().toString(), 'assets/images/DailyProductImg.jpg', title: "Daily Products"),
   imageModel(DateTime.now().toString(), 'assets/images/ChocolateImg.jpg', title: "Chocolate")
+];
+
+final List<imageModel> fruitsCategoriesImages = [
+  imageModel(DateTime.now().toString(), 'assets/images/AppleImg.jpg', title: "Apple", price: 1.80),
+  imageModel(DateTime.now().toString(), 'assets/images/OrangeImg.jpg', title: "Orange", price: 3.00),
+  imageModel(DateTime.now().toString(), 'assets/images/BananaImg.jpg', title: "Banana", price: 2.00),
+  imageModel(DateTime.now().toString(), 'assets/images/RedGrapesImg.jpg', title: "Red Grapes", price: 5.00),
+  imageModel(DateTime.now().toString(), 'assets/images/KiwiImg.jpg', title: "Kiwi", price: 10.99),
+  imageModel(DateTime.now().toString(), 'assets/images/PearImg.jpg', title: "Pear", price: 7.99),
 ];
