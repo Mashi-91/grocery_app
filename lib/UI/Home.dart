@@ -142,7 +142,7 @@ class Home extends StatelessWidget {
             ),
             30.heightBox,
             Container(
-              height: 180,
+              height: 200,
               width: double.infinity,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -155,18 +155,18 @@ class Home extends StatelessWidget {
                           alignment: Alignment.topRight,
                           children: [
                             Container(
-                              height: 100,
+                              height: 135,
                               width: 150,
                               child: Image.asset(
                                   fruitsCategoriesImages[i].img,
                                   fit: BoxFit.cover),
                             ),
-                            IconButton(
-                                alignment: Alignment.topRight,
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.favorite_border_rounded,
-                                ))
+                            GestureDetector(
+                              onTap: (){},
+                                  child: const Icon(
+                                    Icons.favorite_border_rounded,
+                                  ),
+                                ).box.make().p8()
                           ],
                         ),
                         fruitsCategoriesImages[i]

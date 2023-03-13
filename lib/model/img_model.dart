@@ -37,8 +37,8 @@ final List<imageModel> CircularImages = [
 final List<imageModel> fruitsCategoriesImages = [
   imageModel(DateTime.now().toString(), 'assets/images/AppleImg.jpg', title: "Apple", price: 1.80),
   imageModel(DateTime.now().toString(), 'assets/images/OrangeImg.jpg', title: "Orange", price: 3.00),
-  imageModel(DateTime.now().toString(), 'assets/images/BananaImg.jpg', title: "Banana", price: 2.00),
-  imageModel(DateTime.now().toString(), 'assets/images/RedGrapesImg.jpg', title: "Red Grapes", price: 5.00),
+  imageModel(DateTime.now().toString(), 'assets/images/BananaImg.png', title: "Banana", price: 2.00),
+  imageModel(DateTime.now().toString(), 'assets/images/GrapesImg.jpg', title: "Grapes", price: 5.00),
   imageModel(DateTime.now().toString(), 'assets/images/KiwiImg.jpg', title: "Kiwi", price: 10.99),
   imageModel(DateTime.now().toString(), 'assets/images/PearImg.jpg', title: "Pear", price: 7.99),
 ];
