@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/Util/color_constant.dart';
 import 'package:grocery_app/model/img_model.dart';
 import 'package:velocity_x/velocity_x.dart';
-import '';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -11,39 +11,20 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 3,
-              child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/img.jpg"),
-                  )
-                ),
-              ),
+      body: Center(
+        child: MaterialButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/welcome_page');
+          },
+          color: Color(0XFF3AA757),
+          height: 40,
+          child: "Go to Welcome Page"
+            .text
+            .size(20)
+            .color(Colors.white)
+            .make(),
           ),
-          Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[
-                    RichText(
-                      textAlign: TextAlign.center,
-                        text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "Welcome to our",
-                              ),
-                            ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-          ),
-        ],
-      )
+        ),
     );
   }
 }

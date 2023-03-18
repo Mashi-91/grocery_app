@@ -1,8 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/home_page.dart';
-import 'package:grocery_app/UI/landing_page.dart';
 
 void main() {
   runApp(const MyApp());
