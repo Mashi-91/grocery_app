@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
                     'Samad Vurgun Street 123b',
                     style: TextStyle(fontWeight: FontWeight.w500),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   IconButton(
                       onPressed: () {},
                       icon: const Icon(
@@ -44,14 +44,14 @@ class Home extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search products',
-                  hintStyle: TextStyle(fontWeight: FontWeight.w400),
-                  contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  hintStyle: const TextStyle(fontWeight: FontWeight.w400),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 10),
                   prefixIcon: const Icon(
                     EvaIcons.searchOutline,
                     color: Color(0xFF818181),
                     size: 23,
                   ),
-                  fillColor: Color(0xFFF5F5F5),
+                  fillColor: const Color(0xFFF5F5F5),
                   filled: true,
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -134,7 +134,7 @@ class Home extends StatelessWidget {
                       .text
                       .fontWeight(FontWeight.w600)
                       .size(15)
-                      .color(Color(0xFF41A656))
+                      .color(const Color(0xFF41A656))
                       .make()
                       .onTap(() {})
                 ],

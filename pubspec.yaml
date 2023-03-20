@@ -40,6 +40,7 @@ dependencies:
   like_button:
   intl:
   animated_bottom_navigation_bar:
+  sign_button: ^2.0.3
 
 dev_dependencies:
   flutter_test:

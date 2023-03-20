@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/Util/color_constant.dart';
-import 'package:grocery_app/model/img_model.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class WelcomePage extends StatelessWidget {
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +39,7 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Spacer(),
+                60.heightBox,
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 10, horizontal: 20),
@@ -52,10 +49,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                       minWidth: double.infinity,
                       height: 50,
-                      color: Color(0XFF3AA757),
+                      color: const Color(0XFF3AA757),
                       textColor: Colors.white,
-                      onPressed: () {},
-                      child: Text(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/signin_page');
+                      },
+                      child: const Text(
                         "Next",
                       )),
                 ),
@@ -67,10 +66,10 @@ class ProfilePage extends StatelessWidget {
                       ),
                       minWidth: double.infinity,
                       height: 50,
-                      color: Color(0XFFD3D3D3),
+                      color: const Color(0XFFD3D3D3),
                       textColor: Colors.black,
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Skip",
                       )),
                 ),

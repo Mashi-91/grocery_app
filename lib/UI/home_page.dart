@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/cart_page.dart';
 import 'package:grocery_app/UI/categories_page.dart';
 import 'package:grocery_app/UI/favorite_page.dart';
+import 'package:grocery_app/UI/landing_page.dart';
 import 'package:grocery_app/UI/profile_page.dart';
 import 'package:grocery_app/Util/color_constant.dart';
 
@@ -34,8 +35,8 @@ class _HomePageState extends State<HomePage> {
           selectedItemColor: ColorConstant.tealA400,
           unselectedItemColor: Colors.grey.shade400,
           type: BottomNavigationBarType.fixed,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
-          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
           items: const [
             BottomNavigationBarItem(icon: Icon(EvaIcons.homeOutline), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(EvaIcons.gridOutline), label: 'Categories'),
