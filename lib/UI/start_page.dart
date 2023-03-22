@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+class StartPage extends StatelessWidget {
+  const StartPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery
+        .of(context)
+        .size;
     return Scaffold(
       body: Center(
         child: Column(
@@ -23,22 +24,22 @@ class WelcomePage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const Text(
-              'Welcome to our \n Grocery app',
+              'Congratulation',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,fontWeight: FontWeight.bold,
-                fontFamily: 'Poppins'
+                  color: Colors.black,
+                  fontSize: 30, fontWeight: FontWeight.bold,
+                  fontFamily: 'Poppins'
               ),
             ),
             const SizedBox(height: 16),
             const Text(
-              'Our goal is to always provide you with \n fresh and quality products.',
+              'You can now choose the product you \n want and order it. We guarantee the \n quality of our products.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.black87,
-                fontSize: 17,
-                fontFamily: 'Poppins'
+                  color: Colors.black87,
+                  fontSize: 17,
+                  fontFamily: 'Poppins'
               ),
             ),
             const SizedBox(height: 80),
@@ -50,36 +51,16 @@ class WelcomePage extends StatelessWidget {
                 backgroundColor: const Color(0XFF3AA756),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/signup_page');
+                Navigator.pushNamed(context, '/Home');
               },
               child: Container(
                 alignment: Alignment.center,
                 width: size.width * 0.7,
                 height: 50,
                 child: const Text(
-                  "Next",
-                  style: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'Poppins'),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                backgroundColor: const Color(0XFFECECEC),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, '/signup_page');
-              },
-              child: Container(
-                alignment: Alignment.center,
-                width: size.width * 0.7,
-                height: 50,
-                child: const Text(
-                  "Skip",
-                  style: TextStyle(color: Colors.black, fontSize: 16, fontFamily: 'Poppins'),
+                  "Start shopping now!",
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 16, fontFamily: 'Poppins'),
                 ),
               ),
             ),

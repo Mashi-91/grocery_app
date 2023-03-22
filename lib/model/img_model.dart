@@ -44,4 +44,7 @@ final List<imageModel> fruitsCategoriesImages = [
 ];
 final List<imageModel> AuthImages = [
   imageModel(DateTime.now().toString(), 'assets/images/img.jpg', title: "Logo"),
+  imageModel(DateTime.now().toString(), 'assets/images/google.png', title: "Google"),
+  imageModel(DateTime.now().toString(), 'assets/images/facebook.png', title: "Facebook"),
+  imageModel(DateTime.now().toString(), 'assets/images/apple.png', title: "Apple"),
 ];

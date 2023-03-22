@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/cart_page.dart';
 import 'package:grocery_app/UI/categories_page.dart';
 import 'package:grocery_app/UI/favorite_page.dart';
-import 'package:grocery_app/UI/landing_page.dart';
 import 'package:grocery_app/UI/profile_page.dart';
 import 'package:grocery_app/Util/color_constant.dart';
 

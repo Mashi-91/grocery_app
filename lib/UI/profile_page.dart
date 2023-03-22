@@ -8,20 +8,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: MaterialButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/welcome_page');
-          },
-          color: const Color(0XFF3AA757),
-          height: 40,
-          child: "Go to Welcome Page"
-            .text
-            .size(20)
-            .color(Colors.white)
-            .make(),
-          ),
-        ),
+      body: Center(child: Text("Profile Page")),
     );
   }
 }
