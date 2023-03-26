@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     const CategoriesPage(),
     const FavoritePage(),
     const CartPage(),
-    const ProfilePage(),
+    ProfilePage(),
   ];
 
   @override
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               _currentIndex = i;
             });
           }
-        )
+        ),
       ),
     );
   }

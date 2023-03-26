@@ -40,7 +40,13 @@ dependencies:
   like_button:
   intl:
   animated_bottom_navigation_bar:
-  sign_button: ^2.0.3
+  sign_button:
+  firebase_core:
+  firebase_auth:
+  email_validator:
+  google_sign_in:
+  provider:
+
 
 dev_dependencies:
   flutter_test:

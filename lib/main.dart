@@ -1,12 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/home_page.dart';
+import 'package:grocery_app/UI/pages/auth_page.dart';
 import 'package:grocery_app/UI/profile_page.dart';
-import 'package:grocery_app/UI/signin_page.dart';
-import 'package:grocery_app/UI/signup_page.dart';
-import 'package:grocery_app/UI/start_page.dart';
-import 'package:grocery_app/UI/welcome_page.dart';
+import 'package:grocery_app/UI/pages/login_page.dart';
+import 'package:grocery_app/UI/pages/signup_page.dart';
+import 'package:grocery_app/UI/pages/start_page.dart';
+import 'package:grocery_app/UI/pages/welcome_page.dart';
+import 'package:grocery_app/firebase_options.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -20,14 +28,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Grocery App',
       theme: getTheme(context),
-      home: const WelcomePage(),
+      home: const AuthPage(),
       routes: {
-        '/profile_page': (context) => const ProfilePage(),
+        '/profile_page': (context) => ProfilePage(),
         '/welcome_page': (context) => const WelcomePage(),
-        '/signin_page': (context) => const SignIn(),
+        '/login_page': (context) => const LoginPage(),
         '/signup_page': (context) => const SignUp(),
         '/start_page': (context) => const StartPage(),
-        '/Home': (context) => const HomePage(),
+        '/home_page': (context) => const HomePage(),
       },
     );
   }
