@@ -46,6 +46,8 @@ dependencies:
   email_validator:
   google_sign_in:
   provider:
+  flutter_facebook_auth:
+  cloud_firestore:
 
 
 dev_dependencies:
