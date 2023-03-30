@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA82Bysvz95fnhg2ubYtDZ7F4gv9sHOnAU',
-    appId: '1:936800742847:android:aaefe1a28e7579f41c050a',
-    messagingSenderId: '936800742847',
-    projectId: 'groceryapp-83f29',
-    storageBucket: 'groceryapp-83f29.appspot.com',
+    apiKey: 'AIzaSyAffiWppzOY2wEsvciw4WZDk06q7Bq5R9c',
+    appId: '1:60142189401:android:b40b5ccf528901af70ea48',
+    messagingSenderId: '60142189401',
+    projectId: 'grocery-e67df',
+    storageBucket: 'grocery-e67df.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCWhVicA0W4l4T9z2W7gD0Frquv92tcQPE',
-    appId: '1:936800742847:ios:0303b66ff5308eb71c050a',
-    messagingSenderId: '936800742847',
-    projectId: 'groceryapp-83f29',
-    storageBucket: 'groceryapp-83f29.appspot.com',
-    iosClientId: '936800742847-2kameu388oltn5r7rf3sj66f7a5sv2fi.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCOwy0tYDd1-RssmXAKL4GNtjLZw6hbPVw',
+    appId: '1:60142189401:ios:43ce0c8faf6a827370ea48',
+    messagingSenderId: '60142189401',
+    projectId: 'grocery-e67df',
+    storageBucket: 'grocery-e67df.appspot.com',
+    iosClientId: '60142189401-e9t51gdcd0im5mukhm35dsb6arde7cl1.apps.googleusercontent.com',
     iosBundleId: 'com.mmstq.grewcery.groceryApp',
   );
 }
