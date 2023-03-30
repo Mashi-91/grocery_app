@@ -9,7 +9,8 @@ import 'package:grocery_app/UI/pages/start_page.dart';
 import 'package:grocery_app/UI/pages/welcome_page.dart';
 import 'package:grocery_app/firebase_options.dart';
 
-
+//where is the problem
+// lets again open the android studio its android studio elctric eil something like powerd by intellije but last one is not like that
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
