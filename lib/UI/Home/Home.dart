@@ -1,13 +1,14 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/UI/Home/widget.dart';
 import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../Util/color_constant.dart';
-import '../model/img_model.dart';
+import '../../Util/color_constant.dart';
+import '../../model/img_model.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class NavigationController extends StatelessWidget {
+  const NavigationController({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +43,11 @@ class Home extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 22, right: 22, top: 15),
               child: TextField(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => SearchBar()));
+                },
+                keyboardType: TextInputType.none,
+                readOnly: true,
                 decoration: InputDecoration(
                   hintText: 'Search products',
                   hintStyle: const TextStyle(fontWeight: FontWeight.w400),

@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "60142189401-3qker4ls5edg5fkt55fluv0g0rbsf5k5.apps.googleusercontent.com",
+          "client_id": "60142189401-uv9ige6vmm141v7jbqmef21ml0sa084e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mmstq.grewcery.grocery_app",
+            "certificate_hash": "25ec4a3ef4a01125996a11e58e2cf9676e91b5e1"
+          }
+        },
+        {
+          "client_id": "60142189401-fq3j0jdhau2iv6dmdud8nh8ms1olun5u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -29,6 +37,13 @@
             {
               "client_id": "60142189401-3qker4ls5edg5fkt55fluv0g0rbsf5k5.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "60142189401-e9t51gdcd0im5mukhm35dsb6arde7cl1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mmstq.grewcery.groceryApp"
+              }
             }
           ]
         }

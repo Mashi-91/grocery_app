@@ -6,7 +6,7 @@ import 'package:grocery_app/UI/favorite_page.dart';
 import 'package:grocery_app/UI/profile_page.dart';
 import 'package:grocery_app/Util/color_constant.dart';
 
-import 'Home.dart';
+import 'Home/Home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List _pages = [
-    const Home(),
+    const NavigationController(),
     const CategoriesPage(),
     const FavoritePage(),
     const CartPage(),

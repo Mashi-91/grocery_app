@@ -3,7 +3,8 @@ class imageModel{
   String img;
   String? title;
   double? price;
-  imageModel(this.id, this.img, {this.title, this.price});
+  Function? onTap;
+  imageModel(this.id, this.img, {this.title, this.price,this.onTap});
 }
 
 final List<imageModel> imageinfo = [
