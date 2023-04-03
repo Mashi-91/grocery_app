@@ -1,17 +1,21 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/Home/widget.dart';
+import 'package:grocery_app/UI/category_detail_page.dart';
+import 'package:grocery_app/model/CartModel.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../Util/color_constant.dart';
 import '../../model/img_model.dart';
 
-class NavigationController extends StatelessWidget {
-  const NavigationController({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final authProv = Provider.of<CartModel>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -108,14 +112,22 @@ class NavigationController extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: CircularImages.map((index) {
+                children: authProv.CircularImages.map((index) {
                   return Padding(
                     padding: const EdgeInsets.only(left: 10, right: 5),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundImage: AssetImage(index.img),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).pushNamed(CategoryDetailPage.routename,arguments: {
+                              'title': index.title,
+                              'id': index.id
+                            });
+                          },
+                          child: CircleAvatar(
+                            radius: 35,
+                            backgroundImage: AssetImage(index.img),
+                          ),
                         ),
                         7.heightBox,
                         Text(

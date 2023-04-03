@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/category_detail_page.dart';
-import 'package:grocery_app/UI/home_page.dart';
+import 'package:grocery_app/UI/NavigationController.dart';
 import 'package:grocery_app/UI/pages/auth_page.dart';
 import 'package:grocery_app/UI/profile_page.dart';
 import 'package:grocery_app/UI/pages/login_page.dart';
@@ -9,6 +9,7 @@ import 'package:grocery_app/UI/pages/signup_page.dart';
 import 'package:grocery_app/UI/pages/start_page.dart';
 import 'package:grocery_app/UI/pages/welcome_page.dart';
 import 'package:grocery_app/firebase_options.dart';
+import 'package:grocery_app/model/CartModel.dart';
 import 'package:grocery_app/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +28,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => CartModel())
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Grocery App',
@@ -39,8 +43,8 @@ class MyApp extends StatelessWidget {
           '/login_page': (context) => LoginPage(),
           '/signup_page': (context) => SignUp(),
           '/start_page': (context) => const StartPage(),
-          '/home_page': (context) => const HomePage(),
-          CategoryDetailPage.routename:(_)=>CategoryDetailPage()
+          '/home_page': (context) => const NavigatationController(),
+          CategoryDetailPage.routename: (_) => CategoryDetailPage()
         },
       ),
     );
@@ -51,6 +55,15 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Montserrat',
         primarySwatch: Colors.blue,
+        textTheme: const  TextTheme(
+            titleMedium: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontFamily: 'Montserrat'),
+        titleLarge: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 25,
+            fontFamily: 'Montserrat')),
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,

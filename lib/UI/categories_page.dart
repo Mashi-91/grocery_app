@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/category_detail_page.dart';
 import 'package:grocery_app/Util/color_constant.dart';
+import 'package:grocery_app/model/CartModel.dart';
 import 'package:grocery_app/model/img_model.dart';
+import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CategoriesPage extends StatelessWidget {
@@ -9,11 +11,12 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authProv = Provider.of<CartModel>(context);
     return Scaffold(
       appBar: AppBar(title: const Text('Categories'),),
       body: GridView.builder(
         padding: EdgeInsets.all(20),
-        itemCount: CategoriesImages.length,
+        itemCount: authProv.CategoriesImages.length,
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 150,
               crossAxisSpacing: 15,
@@ -23,7 +26,8 @@ class CategoriesPage extends StatelessWidget {
             return GestureDetector(
               onTap: (){
                 Navigator.of(context).pushNamed(CategoryDetailPage.routename, arguments: {
-                  'title': CategoriesImages[i].title
+                  'title': authProv.CategoriesImages[i].title,
+                  'id': authProv.CategoriesImages[i].id
                 });
               },
               child: Container(
@@ -36,12 +40,12 @@ class CategoriesPage extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 8, left: 10, right: 10),
                       child: CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage(CategoriesImages[i].img),
+                        backgroundImage: AssetImage(authProv.CategoriesImages[i].img),
                       ),
                     ),
                     7.heightBox,
                     Text(
-                      "${CategoriesImages[i].title}",
+                      "${authProv.CategoriesImages[i].title}",
                       style: const TextStyle(
                           fontSize: 13, fontWeight: FontWeight.w600),
                     ),

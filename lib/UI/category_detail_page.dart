@@ -1,6 +1,8 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/model/CartModel.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../Util/color_constant.dart';
@@ -12,9 +14,12 @@ class CategoryDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authProv = Provider.of<CartModel>(context);
     final Args =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
     final title = Args['title'] as String;
+    final categoryId = Args['id'] as String;
+    final detailid = authProv.findbyid(categoryId);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -47,79 +52,81 @@ class CategoryDetailPage extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.81,
             child: GridView.builder(
-                itemCount: fruitsCategoriesImages.length,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                ),
+                itemCount: detailid.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, childAspectRatio: 1 / 1.2),
                 itemBuilder: (_, i) {
-                  return Padding(
-                    padding:
-                        const EdgeInsets.only(right: 10, left: 10, top: 15),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border:
-                            Border.all(width: 1, color: Colors.grey.shade200),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Stack(
-                            alignment: Alignment.topRight,
-                            children: [
-                              Container(
-                                height: 135,
+                  return Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(width: 1, color: Colors.grey.shade200),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Stack(
+                          alignment: Alignment.topRight,
+                          children: [
+                            ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(12),
+                                  topRight: Radius.circular(12)),
+                              child: Container(
+                                height: 150,
                                 width: double.maxFinite,
-                                child: Image.asset(
-                                    fruitsCategoriesImages[i].img,
-                                    fit: BoxFit.fitHeight),
+                                child: Image.network(detailid[i].image,
+                                    fit: BoxFit.fill),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: GestureDetector(
-                                  onTap: () {},
-                                  child: const Icon(
-                                    Icons.favorite_border_rounded,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 8),
-                            child: Text(
-                              fruitsCategoriesImages[i].title!,
-                              style: TextStyle(fontWeight: FontWeight.w600),
                             ),
-                          ),
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(left: 9),
-                                child: Text(
-                                  NumberFormat.simpleCurrency()
-                                      .format(fruitsCategoriesImages[i].price),
-                                  style: const TextStyle(
-                                      color: Colors.orange,
-                                      fontWeight: FontWeight.w600),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: const Icon(
+                                  Icons.favorite_border_rounded,
                                 ),
                               ),
-                              const Text(
-                                " / kg",
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, top: 8),
+                          child: Text(
+                            detailid[i].title,
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 9),
+                              child: Text(
+                                NumberFormat.simpleCurrency()
+                                    .format(detailid[i].price),
+                                style: const TextStyle(
+                                    color: Colors.orange,
+                                    fontWeight: FontWeight.w600),
                               ),
-                              Spacer(),
-                              Padding(
+                            ),
+                            const Text(
+                              " / kg",
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            Spacer(),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Padding(
                                 padding: EdgeInsets.only(right: 8),
                                 child: Icon(Icons.add_circle_rounded,
                                     color: ColorConstant.tealA400),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
                     ),
                   );
                 }),

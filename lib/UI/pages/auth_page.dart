@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/Home/Home.dart';
-import 'package:grocery_app/UI/home_page.dart';
+import 'package:grocery_app/UI/NavigationController.dart';
 import 'package:grocery_app/UI/pages/signup_page.dart';
 import 'package:grocery_app/UI/profile_page.dart';
 
@@ -16,7 +16,7 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           // user logged in
           if(snapshot.hasData) {
-            return HomePage();
+            return NavigatationController();
           } // user not logged in
           else {
             return SignUp();

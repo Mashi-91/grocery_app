@@ -8,17 +8,17 @@ import 'package:grocery_app/Util/color_constant.dart';
 
 import 'Home/Home.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class NavigatationController extends StatefulWidget {
+  const NavigatationController({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<NavigatationController> createState() => _NavigatationControllerState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NavigatationControllerState extends State<NavigatationController> {
   int _currentIndex = 0;
   final List _pages = [
-    const NavigationController(),
+    const Home(),
     const CategoriesPage(),
     const FavoritePage(),
     const CartPage(),
