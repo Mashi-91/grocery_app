@@ -1,7 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/UI/Home/widget.dart';
-import 'package:grocery_app/UI/category_detail_page.dart';
+import 'package:grocery_app/UI/product.dart';
 import 'package:grocery_app/model/CartModel.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -26,15 +26,17 @@ class Home extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        authProv.getCurrentLocation();
+                      },
                       icon: const Icon(
                         Icons.location_on_rounded,
                         color: Color(0xFFF8740F),
                       )),
-                  const Text(
-                    'Samad Vurgun Street 123b',
+                  authProv.currentAddress != null ? Text(
+                    '${authProv.currentAddress}',
                     style: TextStyle(fontWeight: FontWeight.w500),
-                  ),
+                  ) : const Text('Tap to get location!',style: TextStyle(fontWeight: FontWeight.w500)),
                   const Spacer(),
                   IconButton(
                       onPressed: () {},
@@ -119,7 +121,7 @@ class Home extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: (){
-                            Navigator.of(context).pushNamed(CategoryDetailPage.routename,arguments: {
+                            Navigator.of(context).pushNamed(ProductPage.routename,arguments: {
                               'title': index.title,
                               'id': index.id
                             });
@@ -195,7 +197,7 @@ class Home extends StatelessWidget {
                             .p(8),
                         Row(
                           children: [
-                            "${NumberFormat.simpleCurrency().format(fruitsCategoriesImages[i].price)}"
+                            NumberFormat.simpleCurrency().format(fruitsCategoriesImages[i].price)
                                 .text
                                 .color(Colors.orange)
                                 .fontWeight(FontWeight.w600)

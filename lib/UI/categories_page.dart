@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/UI/category_detail_page.dart';
+import 'package:grocery_app/UI/product.dart';
 import 'package:grocery_app/Util/color_constant.dart';
 import 'package:grocery_app/model/CartModel.dart';
 import 'package:grocery_app/model/img_model.dart';
@@ -25,7 +25,7 @@ class CategoriesPage extends StatelessWidget {
           itemBuilder: (_, i) {
             return GestureDetector(
               onTap: (){
-                Navigator.of(context).pushNamed(CategoryDetailPage.routename, arguments: {
+                Navigator.of(context).pushNamed(ProductPage.routename, arguments: {
                   'title': authProv.CategoriesImages[i].title,
                   'id': authProv.CategoriesImages[i].id
                 });

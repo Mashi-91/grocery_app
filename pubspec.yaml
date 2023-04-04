@@ -49,6 +49,10 @@ dependencies:
   cloud_firestore:
   provider:
   flutter_svg: ^2.0.4
+  carousel_slider:
+  smooth_page_indicator:
+  geolocator:
+  geocoding:
 
 
 

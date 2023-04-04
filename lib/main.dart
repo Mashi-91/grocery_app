@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/UI/category_detail_page.dart';
+import 'package:grocery_app/UI/product.dart';
 import 'package:grocery_app/UI/NavigationController.dart';
 import 'package:grocery_app/UI/pages/auth_page.dart';
+import 'package:grocery_app/UI/product_detail.dart';
 import 'package:grocery_app/UI/profile_page.dart';
 import 'package:grocery_app/UI/pages/login_page.dart';
 import 'package:grocery_app/UI/pages/signup_page.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
           '/signup_page': (context) => SignUp(),
           '/start_page': (context) => const StartPage(),
           '/home_page': (context) => const NavigatationController(),
-          CategoryDetailPage.routename: (_) => CategoryDetailPage()
+          ProductPage.routename: (_) => ProductPage(),
+          ProductDeatailPage.routename: (_)=>ProductDeatailPage()
         },
       ),
     );
@@ -56,6 +58,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         primarySwatch: Colors.blue,
         textTheme: const  TextTheme(
+          titleSmall: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              fontFamily: 'Montserrat'),
             titleMedium: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
