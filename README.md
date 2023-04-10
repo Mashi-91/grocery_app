@@ -2,6 +2,11 @@
 
 Buy fruits, vegetables and many other groceries
 
+![Screenshot_1681150905](https://user-images.githubusercontent.com/56748946/230967831-2b0efb62-7680-4dfb-90f4-7c49b5c69a6a.png)
 
+![Screenshot_1681150910](https://user-images.githubusercontent.com/56748946/230967898-08f67edd-85f4-4bb3-8d3e-a1a726b978d8.png)
 
 <img src="https://user-images.githubusercontent.com/39179965/226107083-6ca589b6-1ce8-4878-8447-310afa2450b2.jpg" width="200"/>
+
+![Screenshot_1681150935](https://user-images.githubusercontent.com/56748946/230967921-9b1b0f70-b324-4c00-b939-1aecb1ee7382.png)
+![Screenshot_1681150946](https://user-images.githubusercontent.com/56748946/230967932-c9d664c9-c637-4e07-9d80-b7f637403a5f.png)
