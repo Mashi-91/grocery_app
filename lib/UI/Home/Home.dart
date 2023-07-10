@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.only(left: 22, right: 22, top: 15),
               child: TextField(
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => SearchBar()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => CustomSearchBar()));
                 },
                 keyboardType: TextInputType.none,
                 readOnly: true,
